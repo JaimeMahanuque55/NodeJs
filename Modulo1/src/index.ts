@@ -47,7 +47,7 @@ console.log(validator.isIP(ip));
 
 import validator from "validator";
 
-let name: string = "jaime";
+let name: string = "pedro";
 
 if (validator.isLowercase(name)) {
     console.log(`A string ${name} e toda minuscula.`)
