@@ -34,10 +34,23 @@ console.log(`MULTIPLICACAO: ${Maths.multiplicar(n1, n2)}`);
 */
 
 ////////////// Importing third-party files ////////////////
-
+/*
 import validator from 'validator';
 
 let ip = '127.255.0.1'
 
-console.log(validator.isEmail('jamesgrizzly55@gmail.com'));
+console.log(validator.isEmail('jamesizz55@gmail.com'));
 console.log(validator.isIP(ip));
+*/
+
+/////////////////// Getting to know Nodemon /////////////////
+
+import validator from "validator";
+
+let name: string = "jaime";
+
+if (validator.isLowercase(name)) {
+    console.log(`A string ${name} e toda minuscula.`)
+} else {
+    console.log(`A string ${name} Nao e toda minuscula`)
+}
