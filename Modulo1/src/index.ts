@@ -16,3 +16,28 @@ console.log(`SOMA: ${Maths.somar(n1, n2)}`);
 console.log(`SUBTRACAO: ${Maths.subtrair(n1, n2)}`);
 console.log(`MULTIPLICACAO: ${Maths.multiplicar(n1, n2)}`);
 */
+
+/////////////// Undertanding import/export in ES6 /////////////////////////
+// import * as Maths from './Maths';
+// import { somar, subtrair, multiplicar } from "./Maths";
+/*
+import Maths from './Maths';
+
+let n1: number = 10;
+let n2: number = 2;
+
+
+
+console.log(`SOMA: ${Maths.somar(n1, n2)}`);
+console.log(`SUBTRACAO: ${Maths.subtrair(n1, n2)}`);
+console.log(`MULTIPLICACAO: ${Maths.multiplicar(n1, n2)}`);
+*/
+
+////////////// Importing third-party files ////////////////
+
+import validator from 'validator';
+
+let ip = '127.255.0.1'
+
+console.log(validator.isEmail('jamesgrizzly55@gmail.com'));
+console.log(validator.isIP(ip));
