@@ -49,6 +49,7 @@ server.listen(80);
 
 /////////////////// Separating Routes in place  //////////////////////////
 
+/*
 import express from 'express';
 import mainRoutes from './routes/index';
 import painelRoutes from './routes/painel';
@@ -57,5 +58,24 @@ const server = express();
 
 server.use('/', mainRoutes);
 server.use('/painel', painelRoutes);
+
+server.listen(80);
+
+*/
+
+//////////////// Creating the 404 (Page not found) //////////////////////
+
+import express, { Request, Response } from 'express';
+import mainRoutes from './routes/index';
+import painelRoutes from './routes/painel';
+
+const server = express();
+
+server.use('/', mainRoutes);
+server.use('/painel', painelRoutes);
+
+server.use((req: Request, res: Response) => {
+    res.status(404).send('Pagina nao encontrada!');
+});
 
 server.listen(80);
