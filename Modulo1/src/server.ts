@@ -82,7 +82,7 @@ server.listen(80);
 */
 
 //////////////// Public Folder and Static Files //////////////////////////
-
+/*
 import express, { Request, Response } from 'express';
 import path from 'path';
 import mainRoutes from './routes/index';
@@ -93,6 +93,31 @@ const server = express();
 
 // server.use(express.static('public'));
 // server.use('/static', express.static('public'));
+server.use(express.static(path.join(__dirname, '../public')));
+
+server.use(mainRoutes);
+
+server.use((req: Request, res: Response) => {
+    res.status(404).send('Pagina nao encontrada!');
+});
+
+server.listen(80);
+*/
+
+////////////// Installing and Configuring Mustache /////////////////////////
+
+import express, { Request, Response } from 'express';
+import path from 'path';
+import mustache from 'mustache-express';
+
+import mainRoutes from './routes/index';
+
+const server = express();
+
+server.set('view engine', 'mustache');
+server.set('views', path.join(__dirname, 'views'));
+server.engine('mustache', mustache());
+
 server.use(express.static(path.join(__dirname, '../public')));
 
 server.use(mainRoutes);
