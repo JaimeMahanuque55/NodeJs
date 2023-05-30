@@ -29,6 +29,23 @@
 
 {{! ///////////// Mustache: Condtional Display /////////////////////}}
 
+{{! <html>
+<head>
+    <title>Pagina Home </title>
+</head>
+<body>
+    <h1>Titulo da pagina </h1>
+    <hr />
+    
+    Opa, Como vai? Mau {{user}} ainda tens {{age}} anos?
+     {{! {{#showOld}}
+        {{! Como vai a vida?
+    {{/showOld}} 
+{{! </body>
+</html>  }} 
+
+{{! ///////////// Mustache: Displaying Lists (loop) /////////////////////}}
+
 <html>
 <head>
     <title>Pagina Home </title>
@@ -41,5 +58,23 @@
     {{#showOld}}
         Como vai a vida?
     {{/showOld}}
+
+    <hr />
+
+    <h2>Produtos</h2>
+    <ul>
+        {{#products}}
+            <li>{{title}} - Mzn {{price}}</li>
+        {{/products}}
+    </ul>
+
+    <hr/>
+
+    <ul>
+        {{#dayCotes}}
+            <li>{{.}}</li>
+        {{/dayCotes}}
+    </ul>
+
 </body>
-</html>  
+</html> 
