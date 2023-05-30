@@ -41,7 +41,7 @@ export default router;
 */
 
 /////////////////////// Mustache: Rendering Information ///////////////////////
-
+/*
 import { Router, Request, Response } from 'express';
 
 const router = Router();
@@ -51,6 +51,39 @@ router.get('/', (req: Request, res: Response) => {
     res.render('home', {
         user: 'James',
         age: 30
+    });
+});
+
+router.get('/contacto', (req: Request, res: Response) => {
+    res.send("Formulario de contacto");
+});
+
+router.get('/sobre', (req: Request, res: Response) => {
+    res.send("Pagina institucional sobre a empresa");
+});
+
+export default router;
+*/
+
+///////////////////////// Mustache: Conditional Display /////////////////////
+
+import { Router, Request, Response } from 'express';
+
+const router = Router();
+
+router.get('/', (req: Request, res: Response) => {
+
+    let age: number = 30;
+    let showOld: boolean = false;
+
+    if (age >= 30) {
+        showOld = true
+    }
+
+    res.render('home', {
+        user: 'James',
+        age: 30,
+        showOld
     });
 });
 

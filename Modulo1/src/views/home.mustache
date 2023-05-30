@@ -1,4 +1,4 @@
-{{! Installing and Configuring Mustache }}
+{{!//////////////// Installing and Configuring Mustache //////////////////}}
 
 {{! <html>
 <head>
@@ -13,9 +13,9 @@
 {{! </body>
 </html>  }}
 
-{{! Mustache: Rendering information }}
+{{!//////////////////// Mustache: Rendering information //////////////////}}
 
-<html>
+{{! <html>
 <head>
     <title>Pagina Home </title>
 </head>
@@ -24,6 +24,22 @@
     <hr />
 
     Opa, Como vai? Mau {{user}} ainda tens {{age}} anos?
+{{!</body>
+</html>   }}
 
+{{! ///////////// Mustache: Condtional Display /////////////////////}}
+
+<html>
+<head>
+    <title>Pagina Home </title>
+</head>
+<body>
+    <h1>Titulo da pagina </h1>
+    <hr />
+    
+    Opa, Como vai? Mau {{user}} ainda tens {{age}} anos?
+    {{#showOld}}
+        Como vai a vida?
+    {{/showOld}}
 </body>
 </html>  
