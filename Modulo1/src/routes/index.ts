@@ -181,6 +181,7 @@ export default router;
 
 ///////////////////// Mustache: Else of Lists //////////////////////////
 
+/*
 import { Router, Request, Response } from 'express';
 
 const router = Router();
@@ -214,6 +215,55 @@ router.get('/contacto', (req: Request, res: Response) => {
 
 router.get('/sobre', (req: Request, res: Response) => {
     res.render('pages/about');
+});
+
+export default router;
+*/
+
+///////////////////// Mustache: Else of Lists //////////////////////////
+
+import { Router, Request, Response } from 'express';
+
+const router = Router();
+
+router.get('/', (req: Request, res: Response) => {
+
+    let age: number = 15;
+    let showOld: boolean = false;
+
+    if (age >= 30) {
+        showOld = true
+    }
+
+    res.render('pages/home', {
+        user: 'James',
+        age: 30,
+        showOld,
+        products: [
+            { title: 'Gelinhos', price: 20 },
+            { title: 'Maguinha', price: 30 },
+            { title: 'Frozy', price: 15 }
+        ],
+        dayCotes: [
+        ]
+    });
+});
+
+router.get('/contacto', (req: Request, res: Response) => {
+    res.render('pages/contact');
+});
+
+router.get('/sobre', (req: Request, res: Response) => {
+    res.render('pages/about');
+});
+
+router.get('/nome', (req: Request, res: Response) => {
+
+    let name: string = req.query.nome as string;
+
+    res.render('pages/name', {
+        nome: name
+    });
 });
 
 export default router;
