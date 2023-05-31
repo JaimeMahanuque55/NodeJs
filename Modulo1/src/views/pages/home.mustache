@@ -81,7 +81,7 @@
 -->  
 
 {{! ///////////// Mustache: Else of Lists  /////////////////////}}
-
+<!--
 <html>
 <head>
     <title>Pagina Home </title>
@@ -120,3 +120,40 @@
 
 </body>
 </html> 
+
+-->
+
+
+{{! ///////////// Mustache: Partial Contetnt  /////////////////////}}
+
+{{>partials/header}}
+    
+    Opa, Como vai? Mau {{user}} ainda tens {{age}} anos?
+    {{#showOld}}
+        Como vai a vida?
+    {{/showOld}}
+    {{^showOld}}
+        Menino novo
+    {{/showOld}}
+
+    <hr />
+
+    <h2>Produtos</h2>
+    <ul>
+        {{#products}}
+            {{>partials/productItem}}
+        {{/products}}
+    </ul>
+
+    <hr/>
+
+    <ul>
+        {{#dayCotes}}
+            <li>{{.}}</li>
+        {{/dayCotes}}
+        {{^dayCotes}}
+            No motivational cotes today
+        {{/dayCotes}}
+    </ul>
+
+{{>partials/footer}}
